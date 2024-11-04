@@ -1,0 +1,23 @@
+[tool.poetry]
+name = "ragbot"
+version = "0.1.0"
+description = ""
+authors = ["HwangRock <157935545+HwangRock@users.noreply.github.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.12"
+python-dotenv = "^1.0.1"
+langchain = "^0.3.7"
+langchain-openai = "^0.2.5"
+langchain-community = "^0.3.5"
+pypdf = "^5.1.0"
+chromadb = "^0.5.17"
+gradio = "^5.4.0"
+gradio-pdf = "^0.0.17"
+langchain-text-splitters = "^0.3.2"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
