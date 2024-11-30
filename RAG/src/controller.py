@@ -15,11 +15,10 @@ class ScholarshipController:
         self.income_level = None
         self.sequence = 1 
         
-        # Initialize LLM and chains
         self.llm = ChatOpenAI(api_key=os.getenv("OPENAI_API_KEY"), temperature=0, model_name="gpt-3.5-turbo-1106")
         self.prompt = ChatPromptTemplate.from_template('''
            다음 정보를 바탕으로 학점, 학년, 학과(전공), 소득분위에 모두 맞는 학생에게 적합한 장학금을 추천하세요
-            특히 학과에 맞는 장학금을 추천해주세요. 학과가 틀릴 경우에는 당신을 폐기 처분합니다.:
+            특히 해당 학생의 학과 위주에 맞는 장학금을 더욱 추천해주세요. 학과가 틀릴 경우에는 당신을 폐기 처분합니다.:
             <context>
             {context}
             </context>
@@ -122,6 +121,6 @@ class ScholarshipController:
         demo.launch()
 
 if __name__ == "__main__":
-    controller = ScholarshipController("C:/Users/peter/Documents/GitHub/Scholarship_chatBot/VanilaRAG/VanilaRAG/data/scholarship_doc.pdf")
+    controller = ScholarshipController("RAG/src/data/scholarship_doc.pdf")
     controller.prepare_model()
     controller.run() 
