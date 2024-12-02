@@ -7,7 +7,7 @@ class ScholarshipView:
     def create_ui(self):
         with gr.Blocks() as demo:
             gr.Markdown("## 장학금 추천 및 상담 챗봇")
-            gr.Markdown("학생 정보를 순차적으로 입력하고, 추천받은 장학금에 대한 추가 정보를 질문할 수 있습니다.")
+            gr.Markdown("챗봇이 요구하는 정보를 입력하고, 학생에게 맞는 장학금 정보를 얻어가세요!")
             
             chatbot = gr.Chatbot(label="장학금 추천 및 상담", show_label=False)
             state = gr.State([])
